@@ -1,23 +1,31 @@
-:root{--bg:#fff;--fg:#000;--muted:#4a4a4a;--accent:#1a4548;--line:#ddd;
+@font-face{font-family:"Source Serif Pro";font-style:normal;font-weight:200 900;font-display:fallback;src:url("fonts/SourceSerif4Variable-Roman.woff2") format("woff2")}
+:root{--bg:#fff;--fg:#000;--muted:#555;--panel:#f6f6f6;--line:#808080;
 --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
---serif:"Source Serif Pro","Source Serif 4",serif}
-@media (prefers-color-scheme:dark){:root{--bg:#15181c;--fg:#e6e8eb;--muted:#a0a8b2;--accent:#8cc7cb;--line:#2c3138}}
+--serif:"Source Serif Pro",serif}
+@media (prefers-color-scheme:dark){:root{--bg:#15181c;--fg:#e6e8eb;--muted:#a0a8b2;--panel:#1f2328;--line:#6b7280}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:1.125rem;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-.wrap{max-width:46rem;margin:0 auto;padding:0 16px}
-header{border-bottom:1px solid var(--line)}
-.brand{display:flex;gap:14px;align-items:center;padding-top:20px}
-.brand img{border-radius:50%}
-.brand h1{margin:0;font-family:var(--sans);font-size:1.125rem;font-style:italic;font-weight:normal;line-height:1.6}
-.brand p{margin:0;color:var(--muted);font-size:1rem}
-nav{display:flex;gap:20px;padding-top:12px;padding-bottom:12px;font-size:1rem}
-a{color:var(--fg)}
-nav a{text-decoration:none}
-.hero{display:block;width:100%;max-width:1200px;height:auto;margin:0 auto}
-h2{margin:2.5rem 0 1rem;font-family:var(--serif);font-weight:300;font-size:clamp(2.75rem,6vw,3.25rem);line-height:1.2}
-h3{margin:2rem 0 .4rem;font-family:var(--sans);font-weight:700;font-size:1.125rem;text-transform:uppercase;line-height:1.6}
-#writing p{margin:.35rem 0}
+a{color:var(--fg);text-decoration-thickness:1px}
+header{padding:24px 16px 0;text-align:center}
+.brand{display:inline-flex;align-items:center;gap:24px;text-decoration:none;color:var(--fg)}
+.brand span{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,6vw,3.25rem);line-height:1.2}
+.divider{width:100px;margin:24px auto;border:0;border-top:2px solid var(--line)}
+main,footer{max-width:1000px;margin:0 auto;padding:0 16px}
+.hero{display:block;width:100%;height:auto}
+.tagline{margin:3rem 0 1.5rem;text-align:center;font-family:var(--serif);font-weight:300;font-size:clamp(2rem,4vw,2.75rem);line-height:1.15}
+.columns{display:flex;gap:24px;align-items:flex-start}
+.col{flex:1 1 0;min-width:0}
+.bio{background:var(--panel);padding:5px}
+h2{margin:1.5rem 0 1rem;font-family:var(--serif);font-weight:300;font-size:clamp(2.75rem,6vw,3.25rem);line-height:1.2}
+h3{margin:2rem 0 .4rem;font-family:var(--sans);font-weight:700;font-size:1.125rem;text-transform:uppercase}
+p{margin:1.5rem 0}
 figure{margin:1.5rem 0;text-align:center}
 figure img{max-width:100%;height:auto}
-figcaption{color:var(--muted);font-size:.9rem}
-footer{color:var(--muted);font-size:.9rem;padding-top:2rem;padding-bottom:2rem}
+figcaption{color:var(--muted);font-size:13px}
+footer{margin-top:4rem;margin-bottom:4rem}
+.contact{max-width:650px;margin:0 auto;background:var(--panel);padding:64px 60px}
+.contact h2{font-size:2.25rem;margin:0}
+.contact .divider{margin:16px 0 24px;width:60px}
+.contact .links{display:flex;flex-wrap:wrap;gap:24px;align-items:center;margin:0;font-size:1rem}
+.contact em{margin-left:auto;font-size:.9rem}
+@media (max-width:781px){.columns{flex-direction:column}.contact{padding:40px 24px}}
